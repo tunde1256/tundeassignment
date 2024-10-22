@@ -4,7 +4,7 @@ const app = express();
 const port = 3002
 const morgan = require('morgan');
 const cors = require('cors');
-
+const UserRoutes = require('./routes/userRoutes')
 
 
 // Middleware
@@ -17,6 +17,7 @@ require('./db/db');
 
 
 // Routes
+app.use('/api/users', UserRoutes);
 
 
 app.listen(port, ()=>{
